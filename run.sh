@@ -11,5 +11,5 @@ if [[ -z "$VIRTUAL_ENV" ]]; then
     echo "激活虚拟环境..."
     source venv/bin/activate
 fi
-pip install flask pillow requests numpy
+pip install flask requests
 python ai.py
