@@ -1,4 +1,4 @@
 # config 
 OLLAMA_URL = http://localhost:8080
-MODEL_NAME = essay-teacher
+MODEL_NAME = qwen3
 PORT = 8081
