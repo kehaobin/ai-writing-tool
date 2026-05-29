@@ -32,9 +32,9 @@ def load_config():
                     value = value.strip()
                     if key in config:
                         config[key] = value
-        logger.info(f"✅ 成功加载配置文件: {CONFIG_PATH}")
+        logger.info(f"成功加载配置文件: {CONFIG_PATH}")
     except:
-        logger.warning("⚠️ 未找到 config.txt，使用默认配置")
+        logger.warning("未找到 config.txt，使用默认配置")
     return config
 
 config = load_config()
@@ -650,11 +650,4 @@ def auto_write():
     return Response(stream_with_context(generate()), mimetype='text/event-stream')
 
 if __name__ == '__main__':
-    print("=" * 60)
-    print("🚀 AI作文助手启动中")
-    print(f"🤖 使用模型: {MODEL_NAME}")
-    print(f"🌐 Ollama 地址: {OLLAMA_URL}")
-    print(f"📝 访问地址: http://localhost:{PORT}")
-    print("💡 功能：作文分析 | 生成大纲 | 素材 | 范文 | 润色 | 纠错")
-    print("=" * 60)
     app.run(host='0.0.0.0', port=PORT, debug=True, threaded=True)
