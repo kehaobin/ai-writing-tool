@@ -1,4 +1,7 @@
 # config 
+# ollama api
 OLLAMA_URL = http://localhost:8080
+# model
 MODEL_NAME = qwen3
+# writing-tool port 
 PORT = 8081
