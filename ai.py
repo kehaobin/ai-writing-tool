@@ -523,7 +523,7 @@ def auto_write():
             return
         
         # 1. 生成大纲
-        yield f"data: {json.dumps({'type': 'section', 'title': '📝 正在生成大纲...'})}\n\n"
+        yield f"data: {json.dumps({'type': 'section', 'title': '正在生成大纲...'})}\n\n"
         
         prompt_outline = f"""为作文生成大纲：
 
@@ -560,7 +560,7 @@ def auto_write():
             logger.error(f"大纲生成错误: {e}")
         
         # 2. 搜集素材
-        yield f"data: {json.dumps({'type': 'section', 'title': '📚 正在搜集素材...'})}\n\n"
+        yield f"data: {json.dumps({'type': 'section', 'title': '正在搜集素材...'})}\n\n"
         
         prompt_material = f"""为作文搜集素材：
 
@@ -601,7 +601,7 @@ def auto_write():
             logger.error(f"素材生成错误: {e}")
         
         # 3. 生成范文
-        yield f"data: {json.dumps({'type': 'section', 'title': '✍️ 正在生成范文...'})}\n\n"
+        yield f"data: {json.dumps({'type': 'section', 'title': '正在生成范文...'})}\n\n"
         
         prompt_fanwen = f"""写一篇500-800字的作文。
 
@@ -644,7 +644,7 @@ def auto_write():
             logger.error(f"范文生成错误: {e}")
         
         # 完成
-        yield f"data: {json.dumps({'type': 'complete', 'message': '✅ 作文生成完成！'})}\n\n"
+        yield f"data: {json.dumps({'type': 'complete', 'message': '作文生成完成！'})}\n\n"
         yield "data: [DONE]\n\n"
     
     return Response(stream_with_context(generate()), mimetype='text/event-stream')
